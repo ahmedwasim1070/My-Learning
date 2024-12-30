@@ -1,1 +1,2 @@
-This is my Learning Journey So Fat :) .
+This is my Learning Journey So Far
+:) .
