@@ -1,0 +1,82 @@
+React is a js library that is use to create Single pages websites it key features to create fast and optomized websites
+To learn React js we need to first learn export and import modules in js
+
+Export / Import Modules.
+1.Default Export
+export default functionName // import functionName from filePath
+2.Named Export
+export {functionName,functionName2,...} // import {functionName,functionName2,...} from filePath
+You can also export the function by using export and then define the function
+You can also change the name of the function by using as keyword while importing to the newfile
+
+Installing React: 
+1.npx
+cmd:npx create-react-app projectName
+after creating the folder open the folder in vscode and enter cmd: npm start
+
+Note(Installation of Bootstrap): 
+1. If you want to add Bootstrap just Terminal cmd:npm i bootstrap
+then add these to lines in index.js:
+import "bootstrap/dist/js/bootstrap.bundle"
+import reportWebVitals from './reportWebVitals'
+Remeber this is adding the bootstrap manually
+2. To add the React Bootstrap the only difference is you can use the bootstrap like modules which is more react way of 
+npm i react-bootstrap
+
+Note(Installation of Font Awsome):
+cmd: npm i --save @fortawesome/fontawesome-svg-core
+cmd: npm i --save @fortawesome/free-solid-svg-icons
+cmd: npm i --save @fortawesome/free-regular-svg-icons
+cmd: npm i --save @fortawesome/free-brands-svg-icons
+cmd: npm i --save @fortawesome/react-fontawesome@latest
+
+Note(Installation of TailwindCss):
+cmd: npm install -D tailwindcss
+cmd: npx tailwindcss init
+Replace all the code from the tailwindconfig.js to the provided code in the web!
+Replace all the css from the /src/index.css from the web!
+
+Props:
+Accessing varaible that is in app.js file in module file
+
+Notification Package:
+npm i react-notifications
+and add the css import file to the module file you want to use 
+import 'react-notifications/lib/notifactions.css'
+
+React Routing:
+cmd: npm i raect-router-dom
+For Static-Routing:
+add varaible on index.js it should look like that!
+let allRoutes=createBrowserRouter(
+  [
+    {
+      path:'/',
+      element:<Home/>
+    },
+    {
+      path:'about-us',
+      element:<About/>
+    },
+    {
+      path: 'contact',
+      element:<Contact/>
+    }
+  ]
+and add this line after <React.StictMode>
+<RouterProvider router={allRoutes}/>
+
+For Dynamic-Routing:
+Dynamic route is the route that is route in the route mean if you have a product page if you click on that product you will be going in an component that is on the component so to do that :
+simply add in createBrowserRouter
+{
+   path: 'product/:id',
+   element: '<Productdetails/>
+},
+where :id is the dynamic means you can change it the loop or any other you want to change it to do that add:
+<Link to={`/blog/{id}`>Product -1 <Link/>
+now where id will be the id of the product it could also be index or any thing you like.
+Now you have the page that is the component but in that component the product will be changed!
+
+Toastify:
+	

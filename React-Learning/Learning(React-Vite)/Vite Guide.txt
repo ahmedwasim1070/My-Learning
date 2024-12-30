@@ -1,0 +1,29 @@
+Vite is the Modren Build Tool
+Setting up:
+cmd : npm create vite@latest vite-app 
+and then cmd : npm i
+and to run vite app use cmd : npm run dev
+and when you are done cmd : npm run build 
+and for preview of the user side build cmd : npm run preview	
+
+
+
+
+To install Tailwind after that:
+cmd : npm install tailwindcss postcss autoprefixer
+cmd-2 : npx tailwindcss init
+Replace : module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+Replace: 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+cmd: import cssfile'
