@@ -43,3 +43,30 @@
 // To fix this we use EXPLICIT Type Casting
 // cout << (5/float(2)); // 2.5 answer
 //
+
+// Problem making Star cap
+// #include <iostream>
+// using namespace std;
+// int main()
+// {
+//     int n = 4;
+//     int temp = n;
+//     for (int i = 0; i < n; i++)
+//     {
+//         temp--;
+//         for (int j = 0; j < temp; j++)
+//         {
+//             cout << " ";
+//         }
+//         cout << "*";
+//         for (int j = 0; j <= i * 2 - 2; j++)
+//         {
+//             cout << " ";
+//         }
+//         if (i >= 1)
+//         {
+//             cout << "*";
+//         }
+//         cout << endl;
+//     }
+// }
