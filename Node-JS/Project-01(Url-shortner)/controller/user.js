@@ -1,6 +1,4 @@
 const user = require("../models/user.js");
-const url = require("../models/model.js");
-const { v4: uuidv4 } = require("uuid");
 const { sessionIdToUserMap } = require("../service/auth.js");
 
 async function handleUserSignup(req, res) {
@@ -16,9 +14,8 @@ async function handlUserLogin(req, res) {
     return res.render("login", {
       error: "The email or password was incorrect !",
     });
-  const sessionId = uuidv4();
-  sessionIdToUserMap.setUser(sessionId, userData);
-  res.cookie("uid", sessionId);
+  const token = sessionIdToUserMap.setUser(user);
+  res.cookie("uid", token);
   return res.redirect("/url/ui");
 }
 

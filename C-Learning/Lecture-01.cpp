@@ -25,6 +25,12 @@
 // float (4 Bytes)
 // bool (1 Byte)
 // double (8 Bytes) >=13!
+// You can make your data types bigger by using these infront of the data type
+// long
+// short
+// long long
+// signed
+// unsigned
 
 // Type Casting
 // From Small data type to big data type is straight forward
@@ -70,3 +76,10 @@
 //         cout << endl;
 //     }
 // }
+
+// Bitwise Operator
+// &
+// |
+// ^
+// <<
+// >>

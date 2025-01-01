@@ -1,12 +1,20 @@
 class sessionToMap {
   constructor() {
-    this.map = new Map();
+    this.jwt = require("jsonwebtoken");
+    this.key = "!@#$%";
   }
-  setUser(id, user) {
-    this.map.set(id, user);
+  setUser(user) {
+    return this.jwt.sign(
+      {
+        _id: user.id,
+        email: user.email,
+      },
+      this.key
+    );
   }
-  getUser(id) {
-    return this.map.get(id);
+  getUser(token) {
+    if (!token) return null;
+    return this.jwt.verify(token, this.key);
   }
 }
 
