@@ -83,3 +83,33 @@
 // ^
 // <<
 // >>
+
+// Arrays
+// dataType varaibleName[arraySize];
+// int arr[10];
+// int arr[]={1,2,3};
+
+// Reverse an Array Problem
+#include <iostream>
+using namespace std;
+void reverseString(int arr[], int end)
+{
+    int start = 0;
+    while (start < end)
+    {
+        swap(arr[start], arr[end]);
+        start++;
+        end--;
+    }
+}
+int main()
+{
+    int size = 6;
+    int arr[size] = {10, 20, 30, 40, 50, 60};
+    reverseString(arr, size - 1);
+    for (int j = 0; j <= size - 1; j++)
+    {
+        cout << j << ":" << arr[j] << endl;
+    }
+    return 0;
+}
