@@ -80,7 +80,7 @@
 // Bitwise Operator
 // &
 // |
-// ^
+// ^ XOR
 // <<
 // >>
 
@@ -90,26 +90,80 @@
 // int arr[]={1,2,3};
 
 // Reverse an Array Problem
-#include <iostream>
-using namespace std;
-void reverseString(int arr[], int end)
-{
-    int start = 0;
-    while (start < end)
-    {
-        swap(arr[start], arr[end]);
-        start++;
-        end--;
-    }
-}
-int main()
-{
-    int size = 6;
-    int arr[size] = {10, 20, 30, 40, 50, 60};
-    reverseString(arr, size - 1);
-    for (int j = 0; j <= size - 1; j++)
-    {
-        cout << j << ":" << arr[j] << endl;
-    }
-    return 0;
-}
+// #include <iostream>
+// using namespace std;
+// void reverseString(int arr[], int end)
+// {
+//     int start = 0;
+//     while (start < end)
+//     {
+//         swap(arr[start], arr[end]);
+//         start++;
+//         end--;
+//     }
+// }
+// int main()
+// {
+//     int size = 6;
+//     int arr[size] = {10, 20, 30, 40, 50, 60};
+//     reverseString(arr, size - 1);
+//     for (int j = 0; j <= size - 1; j++)
+//     {
+//         cout << j << ":" << arr[j] << endl;
+//     }
+//     return 0;
+// }
+
+// Vector Syntax
+// It is imported for STL
+// Vector is a data strutures i c++ but it is very much like arrays but the only difference they are dynamic means they do  not have any fixed size like in array you need to give size each time you define it.
+// Example
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+// int main()
+// {
+//     vector<int> vec = {1, 2, 3};
+//     cout << vec[2];
+//     return 0;
+// }
+// Another way to right vector
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+// int main()
+// {
+//     vector<int> vec(3, 0); // where (3,0) = (sizeOfVector,valueAtEachIndex)
+//     cout << vec[0];
+//     return 0;
+// }
+// You can even use for Each loop on vector
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+// int main()
+// {
+//     vector<int> vec(3, 0); // where (3,0) = (sizeOfVector,valueAtEachIndex)
+//     for (int val : vec)
+//     {
+//         cout << val << endl;
+//     }
+//     return 0;
+// }
+
+// There are many built in function for vector
+// size vec.size() return the size of the array
+// push vec.push_back() appends value at the end
+// pop vec.pop_back() deletst the last value of the vector
+// front vec.front() prints the first element of the vector
+// back vec.back() prints the last element of the vector
+// at vec.at(idx) return the value of vector at the given index
+
+// Static vs Dynamic allocation
+// Static
+// In Static the size of the array is declared at the time of the compilation
+// Static type is executed in the stack in the part of the memory
+// Dynamic
+// While in dynamic size is declared at the runtime
+// Dynamic type is executed in heap part of the memory
+// when a new element is pushed in the vector a new copy of the vector  is created with two times bigger size and new element is placed now
