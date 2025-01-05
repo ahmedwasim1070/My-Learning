@@ -15,8 +15,8 @@ async function handlUserLogin(req, res) {
       error: "The email or password was incorrect !",
     });
   const token = sessionIdToUserMap.setUser(user);
-  res.cookie("uid", token);
-  return res.redirect("/url/ui");
+  // res.cookie("uid", token);
+  return res.json({ token });
 }
 
 module.exports = { handleUserSignup, handlUserLogin };
