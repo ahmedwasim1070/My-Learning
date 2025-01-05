@@ -167,3 +167,74 @@
 // While in dynamic size is declared at the runtime
 // Dynamic type is executed in heap part of the memory
 // when a new element is pushed in the vector a new copy of the vector  is created with two times bigger size and new element is placed now
+
+// Kadane's Algorithm
+// Subarray
+// The countinouse part of an array is called subarray
+// Mathametically:
+// n*(n-1)/2  where n is number of arrays also know as size of an array
+// Code for the finding the Subarray
+// #include <iostream>
+// using namespace std;
+// int main()
+// {
+//     int n = 5;
+//     int arr[5] = {1, 2, 3, 4, 5};
+//     for (int start = 0; start < n; start++)
+//     {
+//         for (int end = start; end < n; end++)
+//         {
+//             for (int i = start; i <= end; i++)
+//             {
+//                 cout << arr[i];
+//             }
+//             cout << " ";
+//         }
+//         cout << endl;
+//     }
+// }
+// Problem Maximum arrays sum
+// #include <iostream> //Time coplexity n^2
+// using namespace std;
+// int main()
+// {
+//     int n = 7;
+//     int arr[7] = {3,
+//                   -4,
+//                   5,
+//                   4,
+//                   -1,
+//                   7,
+//                   -8};
+//     int maxSum = INT_MIN;
+//     for (int start = 0; start < n; start++)
+//     {
+//         int currSum = 0;
+//         for (int end = start; end < n; end++)
+//         {
+//             currSum += arr[end];
+//             maxSum = max(currSum, maxSum);
+//         }
+//     }
+// }
+// Using :
+// Kadane's Algorithm
+// #include <iostream> // Linear Time Complexity
+// using namespace std;
+// int main()
+// {
+//     int n = 7;
+//     int arr[n] = {3, -4, 5, 4, -1, 7, 8};
+//     int maxSum = INT_MIN, crrSum = 0;
+//     for (int val : arr)
+//     {
+//         crrSum += val;
+//         maxSum = max(crrSum, maxSum);
+//         if (crrSum < 0)
+//         {
+//             crrSum = 0;
+//         }
+//     }
+//     cout << maxSum << " ";
+//     return 0;
+// }
