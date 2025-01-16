@@ -215,7 +215,7 @@
 //     return 0;
 // }
 // Most Optimized Approch Moore's voting algorith
-// Basically It States that the majority number frequency will always be greater then the 
+// Basically It States that the majority number frequency will always be greater then the
 // #include <iostream>
 // #include <vector>
 // using namespace std;
@@ -238,3 +238,49 @@
 //     cout<<majorityEl(nums)<<" ";
 //     return 0;
 // }
+
+// Compute x^n
+// in log n
+// #include <iostream>
+// using namespace std;
+// int main()
+// {
+//     double x = 2.00;
+//     long binForm = 10;
+//     if (binForm < 0)
+//     {
+//         x = 1 / x;
+//         binForm = -binForm;
+//     }
+//     double ans = 1;
+//     while (binForm > 0)
+//     {
+//         if (binForm % 2 == 1)
+//         {
+//             ans *= x;
+//         }
+//         x *= x;
+//         binForm /= 2;
+//     }
+//     cout << ans;
+//     return ans;
+// }
+
+// Buy and Sell Stock
+#include <iostream>
+#include <vector>
+int main()
+{
+    std::vector<int> price = {7, 1, 5, 3, 5, 4};
+    int maxProfit = 0, bestBuy = price[0];
+    for (int i = 0; i < price.size(); i++)
+    {
+        if (price[i] > bestBuy)
+        {
+            maxProfit = std::max(maxProfit, price[i] - bestBuy);
+        }
+        bestBuy = std::min(bestBuy, price[i]);
+    }
+    std::cout << maxProfit << " " << '\n';
+    return maxProfit;
+}
