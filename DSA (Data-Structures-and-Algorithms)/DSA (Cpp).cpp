@@ -267,20 +267,112 @@
 // }
 
 // Buy and Sell Stock
+// #include <iostream>
+// #include <vector>
+// int main()
+// {
+//     std::vector<int> price = {7, 1, 5, 3, 5, 4};
+//     int maxProfit = 0, bestBuy = price[0];
+//     for (int i = 0; i < price.size(); i++)
+//     {
+//         if (price[i] > bestBuy)
+//         {
+//             maxProfit = std::max(maxProfit, price[i] - bestBuy);
+//         }
+//         bestBuy = std::min(bestBuy, price[i]);
+//     }
+//     std::cout << maxProfit << " " << '\n';
+//     return maxProfit;
+// }
+
+// Container with most water
+// Brute force approch
+// #include <iostream>
+// #include <vector>
+// int main()
+// {
+//     std::vector<int> height = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+//     int maxVal = 0;
+//     for (int i = 0; i < height.size(); i++)
+//     {
+//         for (int j = i + 1; j < height.size(); j++)
+//         {
+//             int w = j - i;
+//             int ht = std::min(height[i], height[j]);
+//             int area = w * ht;
+//             maxVal = std::max(maxVal, area);
+//         }
+//     }
+//     std::cout << maxVal;
+//     return maxVal;
+// }
+// Two Pointer Approch
+// #include <iostream>
+// #include <vector>
+// int main()
+// {
+//     std::vector<int> height = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+//     int maxVal = 0;
+//     int lp = 0, rp = height.size();
+//     while (lp < rp)
+//     {
+//         int w = rp - lp;
+//         int ht = std::min(height[lp], height[rp]);
+//         maxVal = std::max(maxVal, w * ht);
+//         height[lp] < height[rp] ? lp++ : rp--;
+//     }
+//     std::cout << maxVal;
+//     return maxVal;
+// }
+
+// Product of Array except itself
+// Brute Force
+// #include <iostream>
+// #include <vector>
+// std::vector<int> productOfArray(std::vector<int> nums)
+// {
+//     std::vector<int> ans(nums.size(), 1);
+//     for (int i = 0; i < nums.size(); i++)
+//     {
+//         for (int j = 0; j < nums.size(); j++)
+//         {
+//             if (i != j)
+//             {
+//                 ans[i] *= nums[j];
+//             }
+//         }
+//     }
+//     return ans;
+// }
+// int main()
+// {
+//     std::vector<int> nums = {1, 2, 3, 4};
+//     std::vector<int> ans = productOfArray(nums);
+//     std::cout << ans[0] << std::endl;
+//     return 0;
+// }
+// Optimal way
 #include <iostream>
 #include <vector>
+std::vector<int> productOfArray(std::vector<int> nums)
+{
+    std::vector<int> ans(nums.size(), 1);
+    for (int i = 1; i < nums.size(); i++)
+    {
+        ans[i] = ans[i - 1] * nums[i - 1];
+    }
+    int suffix = 1;
+    for (int i = nums.size() - 2; i >= 0; i--)
+    {
+        suffix *= nums[i + 1];
+        ans[i] *= suffix;
+    }
+    return ans;
+}
 int main()
 {
-    std::vector<int> price = {7, 1, 5, 3, 5, 4};
-    int maxProfit = 0, bestBuy = price[0];
-    for (int i = 0; i < price.size(); i++)
-    {
-        if (price[i] > bestBuy)
-        {
-            maxProfit = std::max(maxProfit, price[i] - bestBuy);
-        }
-        bestBuy = std::min(bestBuy, price[i]);
-    }
-    std::cout << maxProfit << " " << '\n';
-    return maxProfit;
+    std::vector<int> nums = {1, 2, 3, 4};
+    std::vector<int> ans = productOfArray(nums);
+    std::cout << ans[0] << std::endl;
+    return 0;
 }
