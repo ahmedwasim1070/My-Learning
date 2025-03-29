@@ -352,27 +352,27 @@
 //     return 0;
 // }
 // Optimal way
-#include <iostream>
-#include <vector>
-std::vector<int> productOfArray(std::vector<int> nums)
-{
-    std::vector<int> ans(nums.size(), 1);
-    for (int i = 1; i < nums.size(); i++)
-    {
-        ans[i] = ans[i - 1] * nums[i - 1];
-    }
-    int suffix = 1;
-    for (int i = nums.size() - 2; i >= 0; i--)
-    {
-        suffix *= nums[i + 1];
-        ans[i] *= suffix;
-    }
-    return ans;
-}
-int main()
-{
-    std::vector<int> nums = {1, 2, 3, 4};
-    std::vector<int> ans = productOfArray(nums);
-    std::cout << ans[0] << std::endl;
-    return 0;
-}
+// #include <iostream>
+// #include <vector>
+// std::vector<int> productOfArray(std::vector<int> nums)
+// {
+//     std::vector<int> ans(nums.size(), 1);
+//     for (int i = 1; i < nums.size(); i++)
+//     {
+//         ans[i] = ans[i - 1] * nums[i - 1];
+//     }
+//     int suffix = 1;
+//     for (int i = nums.size() - 2; i >= 0; i--)
+//     {
+//         suffix *= nums[i + 1];
+//         ans[i] *= suffix;
+//     }
+//     return ans;
+// }
+// int main()
+// {
+//     std::vector<int> nums = {1, 2, 3, 4};
+//     std::vector<int> ans = productOfArray(nums);
+//     std::cout << ans[0] << std::endl;
+//     return 0;
+// }

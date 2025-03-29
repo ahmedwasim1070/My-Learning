@@ -89,7 +89,6 @@
 // int arr[10];
 // int arr[]={1,2,3};
 
-
 // Vector Syntax
 // It is imported for STL
 // Vector is a data strutures i c++ but it is very much like arrays but the only difference they are dynamic means they do  not have any fixed size like in array you need to give size each time you define it.
@@ -144,3 +143,48 @@
 // Dynamic type is executed in heap part of the memory
 // when a new element is pushed in the vector a new copy of the vector  is created with two times bigger size and new element is placed now
 
+// Memory Address
+// How to get memory address
+// Varaible is stored in memory with hex-decimal memory location
+// int a = 10;
+// std::cout<<& a<<endl;
+// where operator (&) gives the address of the variable
+
+// Pointers
+// To store the memory location of vairable the variable that stores the memory locatino is called pointeres
+// The variable is defined with the * with it
+// int a=10;
+// int* ptr=&a;
+// where * shows that variable is pointer and & is location of that varaible
+// You can even store value of pointer to pointer by just adding two pointers and so on
+// int a = 10;
+// int *ptr = &a; // 10
+// int **ptr1 = &ptr; //10
+// The varaiable type of the varaible and variable type of array should match while ( void ) only can be used with every type of varaible
+
+// Dynamic Memory Allocation
+// That means storing data in heap part of memory there some thing to be remebered that in C you cannot assign varaible to the heap part of variable so you need to store that variable in pointer
+// int* ptr = new int(10);
+// cout << *ptr;
+// You need to delete the pointer that will delete the heap type variable
+// delete ptr;
+// For array ( delete[] ptr )
+// If not done a useless space will be still be occupied even the program is done executing that will cause memory leak that will cause lost of resources and power
+
+// strcpy
+// Creates an copy left one destination and left one will be the data
+
+// const 
+// Make the varaible read only
+
+// String Litterals 
+// char* name="ahmed";
+// read only string 
+// so be extra safe use const 
+// const char* name="ahmed";
+
+// C-String
+// Array that will look like string 
+// char var[]="Hello";
+// char var[]={"H","e","l","l","0","\0"}
+// Makes an array and add extra last character \0 indicating c-string

@@ -1,0 +1,29 @@
+First of all Computer is simply an electronic device that is the collection of switches on and off .
+
+It have an architecture that Includes:
+1. MOTHERBOARD
+2. CPU
+3. RAM
+4. STORAGE
+5. POWERSUPPLY
+
+1. MOTHERBOARD
+It is like the junction that connect every component everything is connected to MOTHERBOARD.
+
+2. CPU
+It is the collection of switches and is the main part of computer it have some parts in it. One of them we should know of is REGISTERS.
+_REGISTERS are the type of memeory that store data temporiarly so it can be processed by the cpu like the data that is need to comunicated frequently
+
+3. RAM
+Ram (Consist of 4 parts)
+In very simple terms it consist of 4 parts.
+1. Code (Read only data or executable data )
+2. Data Segment(Static and Global Variable)
+3. Stack(Consist type of variable that will be terminated automatically one's it get called like {function} after it return something it will be deleted from the memory)
+4. Heap(Consist of Dynamic varaible that change its size according to the output ! just like vector )
+
+4. STORAGE
+It is simply a device that remember the on and off that was done by the CPU.
+
+5. POWERSUPPLY
+Supply power according to the need.
