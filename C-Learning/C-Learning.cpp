@@ -174,17 +174,148 @@
 // strcpy
 // Creates an copy left one destination and left one will be the data
 
-// const 
+// const
 // Make the varaible read only
 
-// String Litterals 
+// String Litterals
 // char* name="ahmed";
-// read only string 
-// so be extra safe use const 
+// read only string
+// so be extra safe use const
 // const char* name="ahmed";
 
 // C-String
-// Array that will look like string 
+// Array that will look like string
 // char var[]="Hello";
 // char var[]={"H","e","l","l","0","\0"}
 // Makes an array and add extra last character \0 indicating c-string
+
+// Classes
+// Classes are functions like structure but can be perform in classes you can take many type of funcitons but there is Constructor funciton that is like the main funciton
+// To execute classes we make object if there is constructor and takes parameter it will take it as an argument
+// There are two types of constructor paramatized constructor and default constructor
+// The default constructor will be called if the object did not take any parameter in case default constructor does not exsist and parameter is not passed it will give error
+// Example
+// #include <iostream>
+// using namespace std;
+// class myClass
+// {
+// public:
+//     int a;
+//     myClass(int a)
+//     {
+//         this->a = a;
+//     }
+// };
+// int main()
+// {
+//     myClass obj(12);
+//     return 0;
+// }
+// In classs there are three types of object specifiers
+// 1. Public (can be accessed outside the object to like in main function)
+// 2. Private (can only be accessed inside the object)
+// 3. Protected (cannot be accesed in main function but they can be parsed to other object in inheritence)
+// Destructor
+// There is destructor that gets called when the Constructors is called means object
+// ~Destructor(){
+// }
+// Copy constructor !
+// There are two types copy constructor
+// #include <iostream>
+// using namespace std;
+// class myClass
+// {
+//     int a;
+
+// public:
+//     myClass()
+//     {
+//         a = 0;
+//     }
+//     myClass(int a)
+//     {
+//         this->a = a;
+//     }
+//     void display()
+//     {
+//         cout << a << '\n';
+//     }
+// };
+// int main()
+// {
+//     myClass a, b(10), d;
+//     a.display();
+//     b.display();
+// Down there was copy constructor and is called shalow copy
+// myClass c = b;
+// or
+// myClass c(b);
+// c.display();
+// This is not copy constructor this is assigment
+// d = a;
+// }
+// #include <iostream>
+// using namespace std;
+// class myClass
+// {
+//     int a;
+
+// public:
+//     myClass()
+//     {
+//         a = 0;
+//     }
+//     myClass(int a)
+//     {
+//         this->a = a;
+//     }
+//     myClass(myClass &obj)
+//     {
+//         cout << "Deep copy : " << obj.a << '\n';
+//     }
+//     void display()
+//     {
+//         cout << a << '\n';
+//     }
+// };
+// int main()
+// {
+//     myClass a, b(10);
+//     b.display();
+//     myClass c = b;
+// }
+// Major differneces between them is that shallow copy is the default constructor and when there is no deep copy the shallow will be called and the other thing is in shallow copy both the object will have the same memory locatino that means if the changes inside the one object will reflect in the other
+// While in Deep copy it is Initialized by user and are stored in differnet part of the memory the changes in it does not reflect the other object
+// Aggregation is a relationship between two classes where one class contain an object of another but both classes are independent from each other
+// Example
+// #include <iostream>
+// using namespace std;
+// class Engine
+// {
+// public:
+//     void start()
+//     {
+//         cout << "Engine started ! " << endl;
+//     }
+// };
+// class car
+// {
+// private:
+//     Engine *obj;
+
+// public:
+//     car(Engine *eng) : obj(eng)
+//     {
+//     }
+//     void display()
+//     {
+//         obj->start();
+//     }
+// };
+
+// int main()
+// {
+//     Engine eng;
+//     car obj(&eng);
+//     obj.display();
+// }
