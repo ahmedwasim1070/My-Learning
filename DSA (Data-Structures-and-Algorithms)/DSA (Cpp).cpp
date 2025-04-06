@@ -376,3 +376,69 @@
 //     std::cout << ans[0] << std::endl;
 //     return 0;
 // }
+
+// Binary Search
+// With Loop
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+// int binarySearch(vector<int> arr, int target)
+// {
+//     int start = 0, end = arr.size() - 1;
+//     while (start <= end)
+//     {
+//         int mid = (start + end) / 2; // can cause overflow SO
+//         int mid=start+(end-start)/2 // always use this to prevent overflow!
+//         if (target > arr[mid])
+//         {
+//             start = mid + 1;
+//         }
+//         else if (target < arr[mid])
+//         {
+//             end = mid - 1;
+//         }
+//         else
+//         {
+//             return mid;
+//         }
+//     }
+//     return -1;
+// }
+// int main()
+// {
+//     vector<int> arr1 = {-1, 0, 3, 6, 10, 23};
+//     int target = 6;
+//     cout << binarySearch(arr1, target) << endl;
+//     return 0;
+// }
+// Recursion
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+// int binarySearch(vector<int> arr, int target, int start, int end)
+// {
+//     if (start <= end)
+//     {
+//         int mid = start + (end - start) / 2;
+//         if (target < arr[mid])
+//         {
+//             return binarySearch(arr, target, start, mid - 1);
+//         }
+//         else if (target > arr[mid])
+//         {
+//             return binarySearch(arr, target, mid + 1, end);
+//         }
+//         else
+//         {
+//             return mid;
+//         }
+//     }
+//     return -1;
+// }
+// int main()
+// {
+//     vector<int> arr = {-1, 0, 3, 8, 11, 32};
+//     int target = 32;
+//     cout << binarySearch(arr, target, 0, arr.size() - 1);
+//     return 0;
+// }

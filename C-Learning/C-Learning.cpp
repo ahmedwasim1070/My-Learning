@@ -162,6 +162,66 @@
 // int **ptr1 = &ptr; //10
 // The varaiable type of the varaible and variable type of array should match while ( void ) only can be used with every type of varaible
 
+// Pass by Reference
+// When you pass the value to a function as parameter the copy of that variable is always created so changes does not reflect the original one
+// To fix that we use PASS BY REFERENCE in c++
+// Basically you just send the pointer instead of the actual varaible ! There is two ways of doing that !
+// Example Pointer
+// #include <iostream>
+// using namespace std;
+// void changeA(int *ptr)
+// {
+//     *ptr = 20;
+// }
+// int main()
+// {
+//     int a = 10;
+//     changeA(&a);
+//     cout << a << endl;
+//     return 0;
+// }
+// Example Alias
+// #include <iostream>
+// using namespace std;
+// void changeA(int &b)
+// {
+//     b = 20;
+// }
+// int main()
+// {
+//     int a = 10;
+//     changeA(a);
+//     cout << a << endl;
+//     return 0;
+// }
+// Both refered to the location of variable
+
+// Array Pointer
+// int arr[]={1,2,3,4,5}
+// std::cout<<*arr<<endl; // return's the first index of the array
+// return 0;
+// Array pointer is constant pointer
+
+// Pointer Arithmetic
+// In case of increment and decrement in pointer the pointer increments the value according to thier data type storage value
+// In case if the pointer of int data type the pointer will increment or decrement it's self to 4
+// In simple addition the number of addition or subtraction will simply be number of data type storage add or sub
+// Example
+// #include <iostream>
+// using namespace std;
+// int main()
+// {
+//     int arr[] = {1, 2, 3, 4, 5};
+//     cout << *arr << endl;
+//     cout << *(arr + 1) << endl;
+//     cout << *(arr + 2) << endl;
+//     return 0;
+// }
+// Pointer to Pointer Subtraction (you cannot add to pointer's but you can subtract them)
+// So inorder to subtract both should be of same data type
+// The subtraction will give the value how many data type variable can be stored between them
+// You can even compare pointers ! 
+
 // Dynamic Memory Allocation
 // That means storing data in heap part of memory there some thing to be remebered that in C you cannot assign varaible to the heap part of variable so you need to store that variable in pointer
 // int* ptr = new int(10);
