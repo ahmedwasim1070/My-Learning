@@ -1,2 +1,1 @@
-This is my Learning Journey So Far
-:) .
+Learning Journey

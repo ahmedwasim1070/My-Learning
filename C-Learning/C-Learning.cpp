@@ -48,7 +48,6 @@
 // The answer shold be 2.5 but it will be 2 because both the input is int
 // To fix this we use EXPLICIT Type Casting
 // cout << (5/float(2)); // 2.5 answer
-//
 
 // Problem making Star cap
 // #include <iostream>
@@ -220,7 +219,7 @@
 // Pointer to Pointer Subtraction (you cannot add to pointer's but you can subtract them)
 // So inorder to subtract both should be of same data type
 // The subtraction will give the value how many data type variable can be stored between them
-// You can even compare pointers ! 
+// You can even compare pointers !
 
 // Dynamic Memory Allocation
 // That means storing data in heap part of memory there some thing to be remebered that in C you cannot assign varaible to the heap part of variable so you need to store that variable in pointer
@@ -237,17 +236,22 @@
 // const
 // Make the varaible read only
 
-// String Litterals
+// C-String
 // char* name="ahmed";
 // read only string
 // so be extra safe use const
 // const char* name="ahmed";
 
-// C-String
+// String Litterals
 // Array that will look like string
 // char var[]="Hello";
 // char var[]={"H","e","l","l","0","\0"}
 // Makes an array and add extra last character \0 indicating c-string
+
+// Functions overloading
+// This a way of using two functions with same name but they perform different actions they can be acessed according to the valid set of parameters
+// Function overriding
+// This is used in inheritence if one function with same name is redifined in the drived object it will be over written on it !
 
 // Classes
 // Classes are functions like structure but can be perform in classes you can take many type of funcitons but there is Constructor funciton that is like the main funciton
@@ -286,7 +290,6 @@
 // class myClass
 // {
 //     int a;
-
 // public:
 //     myClass()
 //     {
@@ -314,12 +317,12 @@
 // This is not copy constructor this is assigment
 // d = a;
 // }
+
 // #include <iostream>
 // using namespace std;
 // class myClass
 // {
 //     int a;
-
 // public:
 //     myClass()
 //     {
@@ -362,7 +365,6 @@
 // {
 // private:
 //     Engine *obj;
-
 // public:
 //     car(Engine *eng) : obj(eng)
 //     {
@@ -372,7 +374,6 @@
 //         obj->start();
 //     }
 // };
-
 // int main()
 // {
 //     Engine eng;
