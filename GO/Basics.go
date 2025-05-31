@@ -50,9 +50,15 @@ func main() {
 		fmt.Println("Y is bigger:", y)
 	}
 
+	// Loop
 	// For loop:
 	for i := 0; i < 5; i++ {
 		fmt.Println("Hello world!", i)
+	}
+	// For Each Loop:
+	names := []string{"ahmed", "ali", "muhammad"}
+	for name := range names {
+		fmt.Println(name)
 	}
 
 	// Arrays in Go:

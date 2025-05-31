@@ -12,8 +12,9 @@ func main() {
 	})
 
 	// Start the server
-	fmt.Println("Server started at port 8080")
-	err := http.ListenAndServe(":8080", nil)
+	PORT := ":8080"
+	fmt.Printf("Server started at port %v \n", PORT)
+	err := http.ListenAndServe(PORT, nil) //http.ListenAndServe() opens a http port while on left port number and on right it would be like on sucess
 	if err != nil {
 		fmt.Println("Error starting server : ", err)
 	}
