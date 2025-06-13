@@ -57,8 +57,8 @@ func main() {
 	}
 	// For Each Loop:
 	names := []string{"ahmed", "ali", "muhammad"}
-	for name := range names {
-		fmt.Println(name)
+	for index, name := range names {
+		fmt.Println(index, name)
 	}
 
 	// Arrays in Go:

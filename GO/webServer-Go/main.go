@@ -6,9 +6,14 @@ import (
 )
 
 func main() {
-	// Handler for Root route !
+	// Handler for Base Route !
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "index.html")
+	})
+
+	// Handler for Home Route
+	http.HandleFunc("/home", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "home.html")
 	})
 
 	// Start the server
