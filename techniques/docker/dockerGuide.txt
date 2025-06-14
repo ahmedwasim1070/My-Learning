@@ -1,0 +1,32 @@
+Docker is like a virtual platform where all the code runs. Docker is very much like a virtual computer but it is differnet from them.
+
+The use of docker is could be in a org where you can run the code on docker (on sigular machine).
+
+Docker Images are use to create docker container similarly like iso images use to install OS.
+Docker container is where the code runs on.
+
+SOME CMDS:
+docker pull image-name (to install setup or image)
+docker images (to list all the installed images)
+docker run image-name (to make a container from image)
+docker run -it image-name (to make your container! interactable)
+docker ps -a (to list all the containers)
+docker ps (to list all the runing containers)
+docker start container-name or container-id (to start exsisting container)
+docker stop container-name or container-id (to stop exsisting container)
+docker rmi image-name (to remove certain image)
+docker rm container-name (to remove certain container)
+docker pull image-name:version (to install image of certain version)
+docker run -d image-name (to run container in detach mode)
+docker run -p8080:3306 image-name (this cmd will bind that 8080 port to 3306 port)
+docker log contianer-id (to get the log of contianer)
+docker exec -it container-name or container-id /bin/bash (to possibly get the config of the contianer like enviroment variable)
+
+Docker Image Layers:
+Every docker image is made up of layers !
+
+Docker vs Virtual Machine:
+Docker only runs on linux kernels only in windows and macos it makes an light weight Kernel to run docker
+Dockers runs on same OS kernel which it is runing on while virtual machine use seperate OS kernel and application layer
+
+Developing with Docker:
