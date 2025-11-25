@@ -387,8 +387,8 @@
 //     int start = 0, end = arr.size() - 1;
 //     while (start <= end)
 //     {
-//         int mid = (start + end) / 2; // can cause overflow SO
-//         int mid=start+(end-start)/2 // always use this to prevent overflow!
+//         // int mid = (start + end) / 2;        // can cause overflow SO
+//         int mid = start + (end - start) / 2; // always use this to prevent overflow!
 //         if (target > arr[mid])
 //         {
 //             start = mid + 1;
@@ -442,3 +442,194 @@
 //     cout << binarySearch(arr, target, 0, arr.size() - 1);
 //     return 0;
 // }
+
+// Bubble Sort
+// #include <iostream>
+// using namespace std;
+// void bubbleSort(int arr[], int size)
+// {
+//     bool isSwapped;
+//     for (int i = 0; i < size - 1; i++)
+//     {
+//         isSwapped = false;
+//         for (int j = 0; j < size - 1; j++)
+//         {
+//             if (arr[j] > arr[j + 1])
+//             {
+//                 swap(arr[j], arr[j + 1]);
+//                 isSwapped = true;
+//             }
+//         }
+//         if (!isSwapped)
+//         {
+//             break;
+//         }
+//     }
+// }
+// int main()
+// {
+//     int size = 5;
+//     int arr[size] = {17, 12, 18, 11, 15};
+//     bubbleSort(arr, size);
+//     for (int i = 0; i < size; i++)
+//         cout << arr[i] << " ";
+//     cout << endl;
+// }
+
+// Selection Sort
+// #include <iostream>
+// using namespace std;
+// void selectionSort(int arr[], int size)
+// {
+//     for (int i = 0; i < size - 1; i++)
+//     {
+//         int minIdx = i;
+//         for (int j = i + 1; j < size - 1; j++)
+//         {
+//             if (arr[j] < arr[minIdx])
+//             {
+//                 minIdx = j;
+//             }
+//         }
+//         swap(arr[i], arr[minIdx]);
+//     }
+// }
+// int main()
+// {
+//     int size = 5;
+//     int arr[size] = {17, 12, 18, 11, 15};
+//     selectionSort(arr, size);
+//     for (int i = 0; i < size; i++)
+//         cout << arr[i] << " ";
+//     cout << endl;
+// }
+
+// Insertion Sort
+// #include <iostream>
+// using namespace std;
+// void insertionSort(int arr[], int size)
+// {
+//     for (int i = 1; i < size; i++)
+//     {
+//         int key = arr[i];
+//         int j = i - 1;
+//         while (j >= 0 && arr[j] > key)
+//         {
+//             arr[j + 1] = arr[j];
+//             j--;
+//         }
+//         arr[j + 1] = key;
+//     }
+// }
+// int main()
+// {
+//     int size = 5;
+//     int arr[size] = {17, 12, 18, 11, 15};
+//     insertionSort(arr, size);
+//     for (int i = 0; i < size; i++)
+//         cout << arr[i] << " ";
+//     cout << endl;
+// }
+
+// Quick Sort
+// #include <iostream>
+// using namespace std;
+// int partition(int arr[], int low, int high)
+// {
+//     int pivot = arr[high];
+//     int i = low - 1;
+//     for (int j = low; j < high; j++)
+//     {
+//         if (arr[j] < pivot)
+//         {
+//             i++;
+//             swap(arr[i], arr[j]);
+//         }
+//     }
+//     swap(arr[i + 1], arr[high]);
+//     return i + 1;
+// }
+// void quickSort(int arr[], int low, int high)
+// {
+//     if (low < high)
+//     {
+//         int pivotIdx = partition(arr, low, high);
+//         quickSort(arr, low, pivotIdx - 1);
+//         quickSort(arr, pivotIdx + 1, high);
+//     }
+// }
+// int main()
+// {
+//     int size = 5;
+//     int arr[size] = {17, 12, 18, 11, 15};
+//     quickSort(arr, 0, size - 1);
+//     for (int i = 0; i < size; i++)
+//         cout << arr[i] << " ";
+//     cout << endl;
+// }
+
+// LinkedList
+// #include <iostream>
+// using namespace std;
+// class LinkedList
+// {
+// private:
+//     struct Node
+//     {
+//         int data;
+//         Node *next;
+//     };
+//     Node *head;
+
+// public:
+//     LinkedList() : head(nullptr) {}
+//     LinkedList(int data) : head(nullptr)
+//     {
+//         Node *newNode;
+//         newNode->data = data;
+//         newNode = nullptr;
+//     }
+//     void insertAtEnd(int data)
+//     {
+//         Node *newNode = new Node{data, nullptr};
+//         if (head == nullptr)
+//         {
+//             head = newNode;
+//         }
+//         else
+//         {
+//             Node *temp = head;
+//             while (temp->next != nullptr)
+//             {
+//                 temp = temp->next;
+//             }
+//             temp->next = newNode;
+//         }
+//     }
+// };
+// int main()
+// {
+//     LinkedList l1(100);
+//     l1.insertAtEnd(200);
+// }
+
+// Tower Of Hanoi
+#include <iostream>
+using namespace std;
+void hanoi(int n, char src, char aux, char dest)
+{
+    if (n == 1)
+    {
+        cout << "Move plate from : " << src << " To " << dest << endl;
+    }
+    else
+    {
+        hanoi(n - 1, src, dest, aux);
+        cout << "Move plate from : " << src << " TO " << dest << endl;
+        hanoi(n - 1, aux, src, dest);
+    }
+}
+int main()
+{
+    hanoi(3, 'A', 'B', 'C');
+}
