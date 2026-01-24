@@ -614,22 +614,22 @@
 // }
 
 // Tower Of Hanoi
-#include <iostream>
-using namespace std;
-void hanoi(int n, char src, char aux, char dest)
-{
-    if (n == 1)
-    {
-        cout << "Move plate from : " << src << " To " << dest << endl;
-    }
-    else
-    {
-        hanoi(n - 1, src, dest, aux);
-        cout << "Move plate from : " << src << " TO " << dest << endl;
-        hanoi(n - 1, aux, src, dest);
-    }
-}
-int main()
-{
-    hanoi(3, 'A', 'B', 'C');
-}
+// #include <iostream>
+// using namespace std;
+// void hanoi(int n, char src, char aux, char dest)
+// {
+//     if (n == 1)
+//     {
+//         cout << "Move plate from : " << src << " To " << dest << endl;
+//     }
+//     else
+//     {
+//         hanoi(n - 1, src, dest, aux);
+//         cout << "Move plate from : " << src << " TO " << dest << endl;
+//         hanoi(n - 1, aux, src, dest);
+//     }
+// }
+// int main()
+// {
+//     hanoi(3, 'A', 'B', 'C');
+// }
